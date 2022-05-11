@@ -1,51 +1,38 @@
 {
-    "requests": [
-        {
-            "method": "GET",
-            "url": "/questionnaire/mandatory-checkbox/"
-        },
-        {
-            "method": "POST",
-            "url": "/questionnaire/mandatory-checkbox/",
-            "data": {
-                "mandatory-checkbox-answer": "Ham & Cheese",
-                "other-answer-mandatory": ""
-            }
-        },
-        {
-            "method": "GET",
-            "url": "/questionnaire/non-mandatory-checkbox/"
-        },
-        {
-            "method": "POST",
-            "url": "/questionnaire/non-mandatory-checkbox/",
-            "data": {
-                "non-mandatory-checkbox-answer": "Ham",
-                "other-answer-non-mandatory": ""
-            }
-        },
-        {
-            "method": "GET",
-            "url": "/questionnaire/single-checkbox/"
-        },
-        {
-            "method": "POST",
-            "url": "/questionnaire/single-checkbox/",
-            "data": {}
-        },
-        {
-            "method": "GET",
-            "url": "/questionnaire/submit/"
-        },
-        {
-            "method": "POST",
-            "url": "/questionnaire/submit/",
-            "data": {}
-        },
-        {
-            "method": "GET",
-            "url": "/submitted/thank-you/"
-        }
-    ],
-    "schema_name": "test_checkbox"
+  "requests": [
+    {
+      "method": "GET",
+      "url": "/questionnaire/benchmark/test_checkboxes/benchmark123/checkboxes/0/mandatory-checkbox"
+    },
+    {
+      "method": "POST",
+      "url": "/questionnaire/benchmark/test_checkboxes/benchmark123/checkboxes/0/mandatory-checkbox",
+      "data": {
+        "mandatory-checkbox-answer": "Ham & Cheese",
+        "other-answer-mandatory": ""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/questionnaire/benchmark/test_checkboxes/benchmark123/checkboxes/0/non-mandatory-checkbox"
+    },
+    {
+      "method": "POST",
+      "url": "/questionnaire/benchmark/test_checkboxes/benchmark123/checkboxes/0/non-mandatory-checkbox",
+      "data": {
+        "non-mandatory-checkbox-answer": "Ham",
+        "other-answer-non-mandatory": ""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "/questionnaire/benchmark/test_checkboxes/benchmark123/checkboxes/0/single-checkbox"
+    },
+    {
+      "method": "POST",
+      "url": "/questionnaire/benchmark/test_checkboxes/benchmark123/checkboxes/0/single-checkbox",
+      "data": {}
+    }
+  ],
+  "schema_name": "benchmark_test_checkbox"
 }

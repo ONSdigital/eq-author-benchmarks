@@ -14,7 +14,7 @@ KEYS_FOLDER = './jwt-test-keys'
 
 PAYLOAD = {
     'eq_id': 'benchmark',
-    'form_type': '0001',
+    'form_type': 'test_checkboxes',
     'user_id': 'benchmark-user',
     'period_str': 'July 2019',
     'period_id': '201907',
