@@ -1,4 +1,6 @@
 {
+  "eq_id": "benchmark",
+  "form_type": "test_checkboxes",
   "requests": [
     {
       "method": "GET",
