@@ -32,6 +32,20 @@
       "method": "POST",
       "url": "/questionnaire/benchmark/test_checkboxes/benchmark123/checkboxes/0/single-checkbox",
       "data": {}
+    },
+    {
+      "method": "GET",
+      "url": "/questionnaire/benchmark/test_checkboxes/benchmark123/confirmation-group/0/confirmation"
+    },
+    {
+      "method": "POST",
+      "url": "/questionnaire/benchmark/test_checkboxes/benchmark123/checkboxes/0/submit",
+      "data": {}
+    },
+    {
+      "method": "POST",
+      "url": "/questionnaire/benchmark/test_checkboxes/thank-you",
+      "data": {}
     }
   ],
   "schema_name": "benchmark_test_checkbox"
