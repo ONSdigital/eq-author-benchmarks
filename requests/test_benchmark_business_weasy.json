@@ -115,6 +115,5 @@
       "method": "GET",
       "url": "/questionnaire/benchmark/test_business/download-pdf?pdf_type=weasy"
     }
-  ],
-  "schema_name": "benchmark_test_business"
+  ]
 }

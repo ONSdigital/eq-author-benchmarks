@@ -111,6 +111,5 @@
       "method": "GET",
       "url": "/questionnaire/benchmark/test_business/view-submission"
     }
-  ],
-  "schema_name": "benchmark_test_business"
+  ]
 }

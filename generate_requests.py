@@ -51,10 +51,8 @@ def parse_har_file(har_file):
 @click.command()
 @click.argument('har_file', type=click.File('r'))
 @click.argument('requests_file', type=click.File('w'))
-@click.argument('schema_name')
-def generate_requests(har_file, requests_file, schema_name):
+def generate_requests(har_file, requests_file):
     requests = parse_har_file(har_file)
-    requests['schema_name'] = schema_name
     json.dump(requests, requests_file, indent=4)
 
 
