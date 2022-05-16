@@ -112,5 +112,5 @@
       "url": "/questionnaire/benchmark/test_business/view-submission"
     }
   ],
-  "schema_name": "test_benchmark_business"
+  "schema_name": "benchmark_test_business"
 }
