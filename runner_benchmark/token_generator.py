@@ -13,8 +13,6 @@ SR_USER_AUTHENTICATION_PUBLIC_KEY_KID = 'e19091072f920cbf3ca9f436ceba309e7d814a6
 KEYS_FOLDER = './jwt-test-keys'
 
 PAYLOAD = {
-    'eq_id': 'benchmark',
-    'form_type': '0001',
     'user_id': 'benchmark-user',
     'period_str': 'July 2019',
     'period_id': '201907',
@@ -67,11 +65,12 @@ _key_store = KeyStore(
 )
 
 
-def _get_payload_with_params(schema_name, survey_url=None, **extra_payload):
+def _get_payload_with_params(eq_id, form_type, survey_url=None, **extra_payload):
     payload_vars = PAYLOAD.copy()
     payload_vars['tx_id'] = str(uuid4())
     payload_vars['response_id'] = str(uuid4())
-    payload_vars['schema_name'] = schema_name
+    payload_vars['eq_id'] = eq_id
+    payload_vars['form_type'] = form_type
     if survey_url:
         payload_vars['survey_url'] = survey_url
 
@@ -85,8 +84,8 @@ def _get_payload_with_params(schema_name, survey_url=None, **extra_payload):
     return payload_vars
 
 
-def create_token(schema_name, **extra_payload):
-    payload_vars = _get_payload_with_params(schema_name, **extra_payload)
+def create_token(eq_id, form_type, **extra_payload):
+    payload_vars = _get_payload_with_params(eq_id, form_type, **extra_payload)
 
     return generate_token(payload_vars)
 

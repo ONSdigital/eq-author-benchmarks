@@ -12,6 +12,8 @@ from .token_generator import create_token
 
 r = random.Random()
 
+from pprint import pprint
+import urllib.parse
 
 class SurveyRunnerTaskSet(TaskSet, QuestionnaireMixins):
     def __init__(self, parent):
@@ -24,8 +26,9 @@ class SurveyRunnerTaskSet(TaskSet, QuestionnaireMixins):
 
         with open(requests_filepath, encoding='utf-8') as requests_file:
             requests_json = json.load(requests_file)
-            self.schema_name = requests_json['schema_name']
             self.requests = requests_json['requests']
+            self.eq_id = requests_json['eq_id']
+            self.form_type = requests_json['form_type']
 
     @task
     def start(self):
@@ -75,7 +78,7 @@ class SurveyRunnerTaskSet(TaskSet, QuestionnaireMixins):
         )
 
     def do_launch_survey(self):
-        token = create_token(schema_name=self.schema_name)
+        token = create_token(eq_id=self.eq_id, form_type=self.form_type)
 
         url = f'/session?token={token}'
         self.get(url=url, name='/session', expect_redirect=True)
