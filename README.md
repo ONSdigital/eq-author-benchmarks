@@ -1,4 +1,3 @@
-
 # EQ Performance Benchmark
 
 This is a performance benchmarking tool designed to measure the performance of [EQ Survey Runner](https://github.com/ONSDigital/eq-survey-runner) using [locust](https://locust.io/).
@@ -14,6 +13,12 @@ You need to remove 10.14 version by using:
 sudo rm -rf /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk
 ```
 
+After completing installation, run the command:
+
+```
+pipenv install
+```
+
 ## Running a benchmark
 
 The benchmark consumes a requests JSON file that contains a list of HTTP requests. This can either be created from scratch or generated from a HAR file. Example requests files can be found in the `requests` folder.
@@ -23,12 +28,24 @@ To run a benchmark, use:
 ```bash
 pipenv run ./run.sh <REQUESTS_JSON> <HOST: Optional>
 ```
+
 e.g.
+
 ```bash
 pipenv run ./run.sh requests/test_checkbox.json
 ```
 
 This will run 1 minute of locust requests with 1 user and no wait time between requests. The output files are `output_stats.csv`, `output_stats_history.csv` and `output_failures.csv`.
+
+To edit the amount of time the tests will be run for, edit the `run.sh` file's `-t` parameter to the required amount of time.
+
+e.g.
+
+```
+USER_WAIT_TIME_MIN_SECONDS=0 USER_WAIT_TIME_MAX_SECONDS=0 REQUESTS_JSON="${1}" HOST="${2:-http://localhost:5000}" pipenv run locust --headless -u 1 -r 1 -t 30m --csv=${4:-output} -L WARNING
+```
+
+This will run the tests for 30 minutes.
 
 For the web interface:
 
@@ -59,7 +76,9 @@ After the test is complete, right-click on one of the requests in the network in
 ```bash
 pipenv run python generate_requests.py <HAR_FILEPATH> <REQUESTS_FILEPATH> <SCHEMA_NAME>
 ```
+
 e.g.
+
 ```bash
 pipenv run python generate_requests.py requests.har requests/test_checkbox.json test_checkbox
 ```
@@ -134,7 +153,6 @@ You need to have Helm installed locally
 
 2. Install Helm Tiller plugin for _Tillerless_ deploys `helm plugin install https://github.com/rimusz/helm-tiller`
 
-
 ### Deploying the app
 
 To deploy the app to the cluster, run the following command:
@@ -161,6 +179,7 @@ If you want to vary the default parameters Locust uses on start, you can specify
 - output.directory - Name of the directory within the GCS bucket in which the output should be stored.
 
 e.g
+
 ```
 helm tiller run \
 -    helm upgrade --install \
@@ -191,30 +210,40 @@ Once the service account has been created you will need to download its JSON key
 ### Download Benchmark Results
 
 If you are running the script using a service account you will need to set the path to the JSON key file as an evironment variable (see Pre-requisites above):
+
 ```bash
 export GOOGLE_APPLICATION_CREDENTIALS="<path_to_json_credentials_file>"
 ```
 
 To run the script and download results:
+
 ```bash
 OUTPUT_BUCKET="<bucket_name>" pipenv run python -m scripts.get_benchmark_results
 ```
 
 This script also accepts optional `NUMBER_OF_DAYS` and `OUTPUT_DIR` environment variables which allows the user to download a subset of results and set
 a specific output directory e.g.
+
 ```bash
 OUTPUT_BUCKET="<bucket_name>" NUMBER_OF_DAYS=<number_of_days> OUTPUT_DIR="<output_directory>" pipenv run python -m scripts.get_benchmark_results
 ```
 
 ### Summarise the Daily Benchmark results
+
 You can get a breakdown of the average response times for a result set by doing:
+
 ```bash
-OUTPUT_DIR="outputs/daily-test" \
+OUTPUT_DIR="output-results" \
 OUTPUT_DATE="2020-01-01" \
 pipenv run python -m scripts.get_summary
 ```
 
+`output_stats.csv` must be contained in the directory `output-results/2020-01-01` for the above command to work.
+
+The parameter `OUTPUT_DATE` should be edited to represent the date the tests were completed. The directory should also be edited to represent the same correct date.
+
 This will output something like:
+
 ```
 2020-01-01
 ---
@@ -237,13 +266,16 @@ Error Percentage: 0.0%
 If `OUTPUT_DATE` is not provided, then it will output a summary for all results within the provided directory.
 
 ### Summarise the Stress Test results:
+
 To get a breakdown of results for a stress test use the `get_aggregated_summary` script. This accepts a folder containing
 results as a parameter, and will provide aggregate totals at the folder level:
+
 ```bash
 OUTPUT_DIR="outputs/stress-test" pipenv run python -m scripts.get_aggregated_summary
 ```
 
 This will output something like:
+
 ```
 ---
 Percentile Averages:
@@ -267,6 +299,7 @@ The `visualise_results` script will run against any benchmark results stored in 
 Optionally, you can also specify the number of days to visualise the results for.
 
 For example, to visualise results for the last 7 days:
+
 ```bash
 OUTPUT_DIR="outputs/daily-test" \
 NUMBER_OF_DAYS="7" \
@@ -274,7 +307,6 @@ pipenv run python -m scripts.visualise_results
 ```
 
 A line chart will be generated and saved as `performance_graph.png`.
-
 
 ## Future Improvements
 
