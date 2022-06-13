@@ -1,0 +1,40 @@
+Count,Message,Traceback,Nodes
+20,"Expected a (302) but got a (502) back when posting page: /questionnaire/benchmark/test_business/benchmark123/groupquestionnaire-introduction/0/block4616 with data: {'answer5873': 'Yes', 'csrf_token': 'Ijk4NGE1NWVjN2ZkODY1ZmMzOGM0OGQ5YzBkMzQ1NzA5NDBmNmE3NTgi.YqNZYw.DESsbp8VMFBBTJy12ApsYi3czQw'}","  File ""/Users/samfarrell/.local/share/virtualenvs/eq-author-benchmarks-xURSnJKw/lib/python3.9/site-packages/locust/user/task.py"", line 296, in run
+    self.execute_next_task()
+  File ""/Users/samfarrell/.local/share/virtualenvs/eq-author-benchmarks-xURSnJKw/lib/python3.9/site-packages/locust/user/task.py"", line 321, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File ""/Users/samfarrell/.local/share/virtualenvs/eq-author-benchmarks-xURSnJKw/lib/python3.9/site-packages/locust/user/task.py"", line 333, in execute_task
+    task(self)
+  File ""/Users/samfarrell/Documents/performance-tests/eq-author-benchmarks/runner_benchmark/taskset.py"", line 42, in start
+    self.replay_requests()
+  File ""/Users/samfarrell/Documents/performance-tests/eq-author-benchmarks/runner_benchmark/taskset.py"", line 68, in replay_requests
+    response = self.post(
+  File ""/Users/samfarrell/Documents/performance-tests/eq-author-benchmarks/runner_benchmark/questionnaire_mixins.py"", line 50, in post
+    raise Exception(error)
+",local
+24,Expected a (200) but got a (502) back when getting page: /questionnaire/benchmark/test_business/benchmark123/groupquestionnaire-introduction/0/introduction-block,"  File ""/Users/samfarrell/.local/share/virtualenvs/eq-author-benchmarks-xURSnJKw/lib/python3.9/site-packages/locust/user/task.py"", line 296, in run
+    self.execute_next_task()
+  File ""/Users/samfarrell/.local/share/virtualenvs/eq-author-benchmarks-xURSnJKw/lib/python3.9/site-packages/locust/user/task.py"", line 321, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File ""/Users/samfarrell/.local/share/virtualenvs/eq-author-benchmarks-xURSnJKw/lib/python3.9/site-packages/locust/user/task.py"", line 333, in execute_task
+    task(self)
+  File ""/Users/samfarrell/Documents/performance-tests/eq-author-benchmarks/runner_benchmark/taskset.py"", line 42, in start
+    self.replay_requests()
+  File ""/Users/samfarrell/Documents/performance-tests/eq-author-benchmarks/runner_benchmark/taskset.py"", line 57, in replay_requests
+    response = self.get(
+  File ""/Users/samfarrell/Documents/performance-tests/eq-author-benchmarks/runner_benchmark/questionnaire_mixins.py"", line 23, in get
+    raise Exception(error)
+",local
+1,Expected a (302) but got a (502) back when getting page: /session?token=eyJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00iLCJraWQiOiJlMTkwOTEwNzJmOTIwY2JmM2NhOWY0MzZjZWJhMzA5ZTdkODE0YTYyIn0.I1opGK_54vr4lCZ9l4Jxq2-SYKx_3L6P2-YfqgZy1x0sqTiiIwRm7RISZTnOOgsUeGr4m5MpeaYicHtVjIWiQbpg4tGGiwBJEXP_URXrCj6YL6f3zSkuJHMXf9wWKSKmJGownttcLCmHOSCK05nCB48IVjZb3ACMf3inZUaBFTE6zotT4C8AMFe59IgSQoZ_FDEcZVfWYWkaf6sA2OKLunn5JJnxv8g8W-sji-5eyGt0hcAzZ_UfQ1ENw6ZahSBJ9Oobx7h5Yacs_7cqkyFaIhlj2ftVj8C5o_PzZtNKMeVaKdMUW_Y8gF3myNg2JwDZ-oPOKmvSLKeLxYVHJX2nyg.tA54juyWsuy4CPs8.WISyAJ2s1kpKEHw4szPFFh3OQdOUAvgJ6JjIBjkHxmtD8b_D4HsY7f9dpPJzMkt0u_IGvZKxrpmYOCzTeA5FXM7yBtiU2_aqN_giv14GPwQ3NgJe9jFVNtS_E4WktpR8LXYloIJ94ElZe7EP5sxs2U2lEZcIOF0LEJ88WeET-uFBjiHcnHmxMzD_qvXgeVyBkDaWP_FWC5YGo3W88d4HoOHQGabwghRY7i38GdrMvhnNED3jqSDiKFCQC1iU-9uRKHZTHDdAvyA6Pe54DbUS_BKT5Hx97T3cixMx2-oyhfnpo7JJzLDjv0i9y_yAjena2_nFRz_dBJgWX267eGJjP3AjW9uF9MIBLDSzKvce5QA0YZFuUDzUhTOI23tkwbIUW0KG7A_Hta6emQcSHqCZFg94wOr7xq2Wnr9Ar_sEo23Av2nwYnfF3W4WuNmMjeqnOVk1VLgn7v4XqD-rN0ID7A79ULcoVJT2mRFFIZSEO15PGGX-WIfGmQz9oA947XTPpzXq0ZSByJxKnXMBUznZ4VhGVQHbesr-DkHHQYjcRqV1RU9yUoRn3USq66EZDncsQGjVy_0F0om_nIjtkkYri_q9bWyfKmDH-IXp3Kt_e1vWW3GngVRZfwCA7iEZgErjV66DkHPfe5FZQlNuHHzGZ41DOWA5iriAHZa9Oz5_qivmoHg5TlWtCxq5APrkllD6GIqyl3njPtGxD_MdOW_GvO4LewQmV-yLvFVyJHbHpTuDO0MkIj5WZwG4yPW0bzeN7X9CvGxMoFbTTAwHM7VPm6pz9WGvxivRL5im1ow3qcCjwcA7Us4MOupXxYRvDdjDrq26KFgdOyA66ktVrn2mskbY_eUxiUAHHgMB5olDow1BPH4XMOBQjLDXbIDFds1WwV6-p2SO4qvO7ii0fDogTIXOpW-DISjP5-OtVQB-7WoCKLFJSifKjs0IEMQxjC_ZVRTLOFhoLX-sDzo0n5sWlE6FSA2uIRGPxNi0WgiAPrYEgtfwFAkF7WVOxa0vG3STv_K8XwqvJYb4_2Qrt1IZMJg8mPVvlvlRIj0VqKbclkpBwSMVje0hh8gqy9VaYfzlgr_qxTfLc1zr54U9Uqos_A8IUFL5MRB7_Uww-tAilhtBmZaXNG2wgEw4q8wMndmPp8MEX7Glu2PP0Du20PLVZpcsjX5o_Df60wovYbBdPBev6JGiFHJX5Nl7o-jjZ477vziePLI595ex3lNOg8P-dl0SxzkIGlCmjkLpia5we7xPdNlkxeZn1w5B1lRC0HOfRoM5x4amSGmqa3c3X9FEFXSfBPVxU2Yh698tAAcskQEsIeDfne9yRNQXlG0SmaW3pI307uCQMG0dPUG9jL0k5ozvnXgwfE09ZBnSQIuL2W3Jf1cO7UncrUGuL2_3eFSWlKWpa09PTB-CbiTTDw_A9lzekus68ZH-dEknuKb-eRyQGpRnwrG8w1BwSRxv0k65CBi8XrIvsSbo7m6gCsLf1KsxUf1T4tkIPmUAeqBGfL-pSvgUK-5Dp8-msCaDEdAXAIkqRBc-WIvPfksTWGLL9OKOI9cSfhB-J1Xk5bO93KXS4yT3_IkB1JErfWzHC2FZGj3rS-HtRKKXBId4AYU8kwf0KOIhFdRY-6VJW7DzSKAltIav8u-ArHYyTmVk7Qqb6G0hRXO-opXOhFVrehmAjhaHDw5iyiGLFOvzzRUbPoxzEwWlfZ_PPtIjR82nZZmt0bn8acb8L7pawsetIeyIeVNgdhCWGXgIOFQ0gPFvXmurB0NWM2esEdk8yNYEEc8gonIMiIOwqF2ZfUOyTZwaJ1nJtB9knC6utI5V27YV3TlF5JJGKwjGZDonhg0XATP927kAlhv7CSTOhmcOE1yGQUg-xFtKAdbgYlu5_Ts09Mgqkv2BT8_3_Tu0f6tN1-9VdioUzLPqtAq08Q8FPK0yMlz7EDum-lRnqIvex0tZc8xHgfPtPVJgE6aQzMRRPRYFCuUo00MnK9RU3aOkKi9fkXrlPdEd-3n5jmAKDNF_JRnUoOi2AR7IZTzd6iART4LFNWSathINlNc6GdZ1dMsnAzfZ3KIuMyARGCEVUw.-r1ge6SwiJ0x3C_jG49yGA,"  File ""/Users/samfarrell/.local/share/virtualenvs/eq-author-benchmarks-xURSnJKw/lib/python3.9/site-packages/locust/user/task.py"", line 296, in run
+    self.execute_next_task()
+  File ""/Users/samfarrell/.local/share/virtualenvs/eq-author-benchmarks-xURSnJKw/lib/python3.9/site-packages/locust/user/task.py"", line 321, in execute_next_task
+    self.execute_task(self._task_queue.pop(0))
+  File ""/Users/samfarrell/.local/share/virtualenvs/eq-author-benchmarks-xURSnJKw/lib/python3.9/site-packages/locust/user/task.py"", line 333, in execute_task
+    task(self)
+  File ""/Users/samfarrell/Documents/performance-tests/eq-author-benchmarks/runner_benchmark/taskset.py"", line 41, in start
+    self.do_launch_survey()
+  File ""/Users/samfarrell/Documents/performance-tests/eq-author-benchmarks/runner_benchmark/taskset.py"", line 90, in do_launch_survey
+    self.get(url=url, name='/session', expect_redirect=True)
+  File ""/Users/samfarrell/Documents/performance-tests/eq-author-benchmarks/runner_benchmark/questionnaire_mixins.py"", line 17, in get
+    raise Exception(error)
+",local
