@@ -1,4 +1,4 @@
-# Stress Test Phase 4 February 2022
+# Stress Test Phase 10 June 2022
 
 Tests the performance of Survey Runner, hosted on AWS. Comparisons are made with [Questionnaire Runner's December 2021 data](https://github.com/ONSdigital/eq-survey-runner-benchmark/blob/master/doc/performance-testing/cloud-run/0001_stress-test-december-2021.md), hosted on GCP.
 
