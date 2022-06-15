@@ -3,6 +3,7 @@ import os
 import random
 import re
 import time
+from uuid import uuid4
 
 from locust import TaskSet, task
 
@@ -29,6 +30,11 @@ class SurveyRunnerTaskSet(TaskSet, QuestionnaireMixins):
             self.requests = requests_json['requests']
             self.eq_id = requests_json['eq_id']
             self.form_type = requests_json['form_type']
+            ### 
+            # ru_ref must be generated randomly to prevent all users being the same (having same user_id and user_ik)
+            # Doing this prevents errors that would occur when testing post questionnaire completion pages (confirmation, thank you, view submission)
+            ###
+            self.ru_ref = str(uuid4())
 
     @task
     def start(self):
@@ -78,7 +84,7 @@ class SurveyRunnerTaskSet(TaskSet, QuestionnaireMixins):
         )
 
     def do_launch_survey(self):
-        token = create_token(eq_id=self.eq_id, form_type=self.form_type)
+        token = create_token(ru_ref=self.ru_ref, eq_id=self.eq_id, form_type=self.form_type)
 
         url = f'/session?token={token}'
         self.get(url=url, name='/session', expect_redirect=True)

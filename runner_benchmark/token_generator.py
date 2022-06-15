@@ -65,8 +65,9 @@ _key_store = KeyStore(
 )
 
 
-def _get_payload_with_params(eq_id, form_type, survey_url=None, **extra_payload):
+def _get_payload_with_params(ru_ref, eq_id, form_type, survey_url=None, **extra_payload):
     payload_vars = PAYLOAD.copy()
+    payload_vars['ru_ref'] = ru_ref
     payload_vars['tx_id'] = str(uuid4())
     payload_vars['response_id'] = str(uuid4())
     payload_vars['eq_id'] = eq_id
@@ -84,8 +85,8 @@ def _get_payload_with_params(eq_id, form_type, survey_url=None, **extra_payload)
     return payload_vars
 
 
-def create_token(eq_id, form_type, **extra_payload):
-    payload_vars = _get_payload_with_params(eq_id, form_type, **extra_payload)
+def create_token(ru_ref, eq_id, form_type, **extra_payload):
+    payload_vars = _get_payload_with_params(ru_ref, eq_id, form_type, **extra_payload)
 
     return generate_token(payload_vars)
 
